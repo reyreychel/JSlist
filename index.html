@@ -1,6 +1,186 @@
-<html>
+<!--<html>
  <link rel="stylesheet" type="text/css" href="CSS/liststyle.css">
-<body>
+ <link href="CSS/agency.css" rel="stylesheet">
+-->
+
+ <!-- Header begin-->
+
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="CSS/liststyle.css">
+    <link href="css/agency.css" rel="stylesheet">
+    <!--<link href="css/todo.css" rel="stylesheet">-->
+  </head>
+ <!-- Header end-->
+
+
+<!-- adding nav-->
+<body id="page-top">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+          <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Lists</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ol class="navbar-nav text-uppercase ml-auto">
+                <ol class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#avatarline1">Group</a>
+                </ol>
+                <ol class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#claimedlist">Claimed</a>
+                </ol>
+                <ol class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#yourlist">Your List</a>
+                </ol>         
+            </ol>
+            </div>
+          </div>
+        </nav>
+        <!--end of nav-->
+<!-- from original-->
+<!-------------------------opening ----------------------------------------------------->
+    
+    
+<header class="masthead">
+        <div class="container">
+          <div class="intro-text">
+            <div class="intro-lead-in"><h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1></div>
+          </div>
+        </div>
+      </header>
+  
+      <section class="bg-light" id="avatarline1">
+        <div class="container">
+          <!--<div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">Portfolio</h2>
+              <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+          </div>-->
+              <div class="row text-center">
+                  <div class="col">
+                   <div class="avatarboxes">
+                      <img class="img-fluid" src="images/exampleimage.JPG">
+                    group id 1
+                   </div>
+                  </div>
+                  <div class="col">
+                  <div class="avatarboxes">
+                      <img class="img-fluid" src="images/exampleimage1.JPG">
+                   2 of 3
+                  </div>
+                  </div>
+                  <div class="col">
+                   <div class="avatarboxes">
+                      3 of 3
+                   </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="bg-light" id="avatarline2">
+        <div class="container">          
+              <div class="row text-center">
+                  <div class="col">
+                   <div class="avatarboxes">
+                   <img class="img-fluid" src="images/exampleimage1.JPG">
+                   </div>
+                  </div>
+                  <div class="col">
+                  <div class="avatarboxes">
+                   2 of 3
+                  </div>
+                  </div>
+                  <div class="col">
+                   <div class="avatarboxes">
+                   <img class="img-fluid" src="images/exampleimage.JPG">
+                   </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!---------------- to try with the smll boxes--------------------------------------------->
+          <!-- Portfolio Grid -->
+          <section class="bg-light" id="claimedlist">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">Claimed List</h2>
+              <h3 class="section-subheading text-muted">This is your claimed list</h3>
+            </div>
+          </div>
+          <div class="col-lg-12 text-center">
+              Claimed list goes here
+          </div>
+        </div>
+      </section>
+  
+  
+  
+      <!--------------- to put in later ---->
+     
+      <!-- Portfolio Grid -->
+      <section class="bg-light" id="yourlist">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">Your List</h2>
+              <h3 class="section-subheading text-muted">This is your list</h3>
+            </div>
+          </div>
+          <div class="col-lg-12 text-center">
+              Your list goes here
+              <div class="row">
+                    <div class="col-12">
+                        <input id="userInput" type="text" placeholder="New item..." maxlength="27">
+                        <button id="enter">+</i></button>
+                    </div>
+                </div>
+        
+                <!-- Empty List -->
+                <div class="row">
+                    <div class="listItems col-12">
+                        <ul class="col-12 offset-0 col-sm-8 offset-sm-2">
+                        </ul>
+                    </div>
+                </div>
+  
+             
+          </div>
+        </div>
+      </section>
+
+<!-- original end -->
+
+        <!-- body begin -->
+<!--<body>
 	<div class="container">
 		<div class="row">
 			<div class="intro col-12">
@@ -27,7 +207,7 @@
 			</div>
 		</div>
 
-		<!-- Empty List -->
+		<!-- Empty List 
 		<div class="row">
 			<div class="listItems col-12">
 				<ul class="col-12 offset-0 col-sm-8 offset-sm-2">
@@ -36,10 +216,285 @@
 		</div>
 
 	</div>
-	<script type="text/javascript" src="script_method3.js"></script>
-</body>
+	
+</body> -->
 
+
+
+
+<!-- body end-->
+<!--
 <footer>
         <script type="text/javascript" src="JS/listjs.js"></script>
 </footer>
-</html>
+</html> -->
+
+<!-- footer begin-->
+   <!-- Footer -->
+   <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <span class="copyright"><?php echo "Rachelweb " . date("Y"); ?></span>
+            </div>
+            <div class="col-md-4">
+              <ol class="list-inline social-buttons">
+                <ol class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </ol>
+                <ol class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </ol>
+                <ol class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </ol>
+            </ol>
+            </div>
+            <div class="col-md-4">
+              <ol class="list-inline quicklinks">
+                <ol class="list-inline-item">
+                <a href="reset-password.php">Reset &nbsp;</a>
+                </ol>
+                |
+                <ol class="list-inline-item">
+                <a href="logout.php">&nbsp; Sign Out</a>
+                </ol>
+            </ol>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      <!-- Portfolio Modals -->
+  
+      <!-- Modal 1 -->
+      <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                    <ol class="list-inline">
+                      <ol>Date: January 2017</ol>
+                      <ol>Client: Threads</ol>
+                      <ol>Category: Illustration</ol>
+                    </ol>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <i class="fa fa-times"></i>
+                      Close Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modal 2 -->
+      <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                    <ol class="list-inline">
+                      <ol>Date: January 2017</ol>
+                      <ol>Client: Explore</ol>
+                      <ol>Category: Graphic Design</ol>
+                    </ol>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <i class="fa fa-times"></i>
+                      Close Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modal 3 -->
+      <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                    <ol class="list-inline">
+                      <ol>Date: January 2017</ol>
+                      <ol>Client: Finish</ol>
+                      <ol>Category: Identity</ol>
+                    </ol>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <i class="fa fa-times"></i>
+                      Close Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modal 4 -->
+      <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                    <ol class="list-inline">
+                      <ol>Date: January 2017</ol>
+                      <ol>Client: Lines</ol>
+                      <ol>Category: Branding</ol>
+                    </ol>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <i class="fa fa-times"></i>
+                      Close Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modal 5 -->
+      <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                    <ol class="list-inline">
+                    <ol class="list-inline">
+                      <ol>Date: January 2017</ol>
+                      <ol>Client: Southwest</ol>
+                      <ol>Category: Website Design</ol>
+                    </ol>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <i class="fa fa-times"></i>
+                      Close Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modal 6 -->
+      <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                    <ol class="list-inline">
+                      <ol>Date: January 2017</ol>
+                      <ol>Client: Window</ol>
+                      <ol>Category: Photography</ol>
+                    </ol>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <i class="fa fa-times"></i>
+                      Close Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  
+      <!-- Contact form JavaScript -->
+      <script src="js/jqBootstrapValidation.js"></script>
+      <script src="js/contact_me.js"></script>
+  
+      <!-- Custom scripts for this template -->
+      <script src="js/agency.min.js"></script>
+      <!--<script src="js/todo.js"></script>-->
+      <script type="text/javascript" src="script_method3.js"></script>
+      <script type="text/javascript" src="JS/listjs.js"></script>
+    </body>
+  
+  </html>
+<!--footer end-->
