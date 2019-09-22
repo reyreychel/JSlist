@@ -19,15 +19,68 @@ include 'include/nav.php';
 <!---------------------------------- pdo -------------------------------->
 
 <?php 
+
+
 // get group name, this needs to be put in a function
 $groupname = $pdo->query("
-SELECT groups.name
+SELECT groups.name, groups.id
 FROM groups
 INNER JOIN user 
 ON user.groupid = groups.id
 WHERE user.id ='{$_SESSION['id']}';
 ")->fetch();
 
+// insert list item
+
+if (isset($_POST['submit'])) {
+  if (empty($_POST['taskname'])) {
+    $errors = "You must fill in the task";
+  }else{
+    try{
+      echo '1111';
+      // Prepare an insert statement
+      $sql = "INSERT INTO usertask (userid, groupid, taskname) VALUES (:userid, :groupid, :taskname)";
+      $stmt = $pdo->prepare($sql);
+      
+      // Bind parameters to statement
+      $stmt->bindParam(':userid', $userid, PDO::PARAM_STR);
+      $stmt->bindParam(':groupid', $groupid, PDO::PARAM_STR);
+      $stmt->bindParam(':taskname', $taskname, PDO::PARAM_STR);  
+      /* Set the parameters values and execute
+      the statement again to insert another row */
+      $userid = $_SESSION['id'];
+      $groupid = $groupname['id'];
+      $taskname = $_POST['taskname'];
+      
+      $stmt->execute();
+
+      echo "Records inserted successfully.";
+    } catch(PDOException $e){
+        die("ERROR: Could not prepare/execute query: $sql. " . $e->getMessage());
+    }
+     
+    // Close statement
+    unset($stmt);
+    
+    // does this have to refresh?
+    header('location: #yourlist');
+  }
+}	
+
+
+
+
+// show tasks 
+
+// prepare the statement. the place holders allow PDO to handle substituting
+// the values, which also prevents SQL injection
+$stmtgettask = $pdo->prepare("SELECT userid, taskname FROM usertask WHERE userid=:userid");
+
+// bind the parameters
+$stmtgettask->bindValue(":userid", $useridget = $_SESSION['id']);
+
+// initialise an array for the results 
+$results = array();
 
 
 ?>
@@ -46,12 +99,11 @@ WHERE user.id ='{$_SESSION['id']}';
   
       <section class="bg-light" id="avatarline1">
         <div class="container">
-          <!-- your group: name, manage -->
-          <h2>Your group:
+          
+          <h2>Your group: 
             <?php 
-             echo $groupname['name']; 
-            
-            ?>
+            echo $groupname['name'];
+           ?>
           </h2>
           <!--<div class="row">
             <div class="col-lg-12 text-center">
@@ -134,15 +186,42 @@ WHERE user.id ='{$_SESSION['id']}';
               Your list goes here
               <div class="row">
                     <div class="col-12">
-                        <input id="userInput" type="text" placeholder="New item..." maxlength="27">
-                        <button id="enter">+</i></button>
+                      <form method="post" action="welcome.php" class="input_form">
+                        <input type="text" maxlength="27" name="taskname" placeholder="New item..." class="task_input" id="userInput" userInput>
+                        <button type="submit" name="submit"  id="add_btn" class="add_btn">+</button>
+                      </form>
                     </div>
-                </div>
+              </div>
+
+             <!-- old js needs reworking into the new form -->
+                      <!--  <input id="userInput" type="text" placeholder="New item..." maxlength="27">
+                        <button id="enter">+</i></button>
+                      -->
         
                 <!-- Empty List -->
                 <div class="row">
                     <div class="listItems col-12">
                         <ul class="col-12 offset-0 col-sm-8 offset-sm-2">
+                          <?php
+                            if ($stmtgettask->execute()) {
+                              foreach ($stmtgettask->fetch(PDO::FETCH_ASSOC)as $results)
+                                {
+                                  echo $results["taskname"];
+                                }
+                            }
+                           /* if ($stmtgettask->execute()) {
+                              echo 'we made it' ;
+                              
+                                while ($row = $stmtgettask->fetch(PDO::FETCH_ASSOC)) {
+                                    //echo $products['taskname'];
+                                    echo $products['taskname'];
+                                    var_dump($products["taskname"]=$row);
+
+                                    
+                                }
+                            }*/
+
+                          ?>
                         </ul>
                     </div>
                 </div>
